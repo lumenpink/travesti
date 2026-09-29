@@ -1,0 +1,16 @@
+# Dependências e caches
+node_modules/
+.wrangler/
+dist/
+*.log
+.DS_Store
+
+# Ambientes locais e segredos
+.env
+.env.*
+!.env.example
+
+# IDEs e Antigravity
+.vscode/
+.idea/
+.antigravity/

@@ -1,0 +1,584 @@
+/* ==========================================================================
+   TRAVESTI (travesti.2lp.in) — ESTÉTICA ANTI-DESIGN, RUA & MATERIALIDADE ZINE
+   Inspirado no zine punk, na fotocopiadora clandestina e no atrito da rua
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Anton&family=Syne:wght@800;900&display=swap');
+
+:root {
+  --cor-fundo: #09090b;
+  --cor-asfalto: #111116;
+  --cor-papel-jornal: #ece7db;
+  --cor-papel-manilha: #dcc8a4;
+  --cor-tinta-preta: #050507;
+  --cor-vermelho-choque: #ff0033;
+  --cor-rosa-trans: #ff007f;
+  --cor-azul-trans: #00f0ff;
+  --cor-amarelo-manifesto: #f5ee26;
+  --cor-fita-durex: rgba(245, 238, 160, 0.45);
+  --borda-dura: 3px solid #000;
+  --sombra-bloco: 6px 6px 0px #000;
+  --sombra-pesada: 10px 10px 0px #ff0033;
+  --sombra-cian: 8px 8px 0px #00f0ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--cor-fundo);
+  color: #e5e5ea;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* Fundo com ruído analógico e textura de asfalto */
+body {
+  background-image: 
+    radial-gradient(#181820 15%, transparent 16%),
+    radial-gradient(#141418 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+
+/* --------------------------------------------------------------------------
+   LINKS GLOBAIS — ALTO CONTRASTE ANTI-DESIGN / MARCADOR PUNK
+   -------------------------------------------------------------------------- */
+a, a:link, a:visited {
+  color: var(--cor-amarelo-manifesto) !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px !important;
+  font-weight: 600 !important;
+  transition: all 0.15s ease !important;
+}
+
+a:hover, a:active {
+  color: #000000 !important;
+  background-color: var(--cor-amarelo-manifesto) !important;
+  text-decoration: none !important;
+}
+
+/* Links em seções de papel jornal claro */
+.paper-section.torn-paper a,
+.paper-section.torn-paper a:link,
+.paper-section.torn-paper a:visited {
+  color: #b51010 !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px !important;
+  font-weight: 700 !important;
+}
+
+.paper-section.torn-paper a:hover,
+.paper-section.torn-paper a:active {
+  color: #ffffff !important;
+  background-color: #b51010 !important;
+  text-decoration: none !important;
+}
+
+/* Links em tarja de choque preta */
+.tarja-choque-preta a,
+.tarja-choque-preta a:link,
+.tarja-choque-preta a:visited {
+  color: var(--cor-azul-trans) !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px !important;
+  font-weight: 700 !important;
+}
+
+.tarja-choque-preta a:hover,
+.tarja-choque-preta a:active {
+  color: #000000 !important;
+  background-color: var(--cor-azul-trans) !important;
+  text-decoration: none !important;
+}
+
+.hero-zine-cover::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   FAIXA DE TOPO & SELETOR DE IDIOMAS (ESTILO FITA ADESIVA DE GUERRILHA)
+   -------------------------------------------------------------------------- */
+.top-tape-bar {
+  background: #000;
+  border-bottom: 3px solid #ff0033;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.tape-brand {
+  font-family: 'Anton', sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tape-brand .badge-trans {
+  background: linear-gradient(90deg, #5BCEFA 0%, #F5A9B8 25%, #FFFFFF 50%, #F5A9B8 75%, #5BCEFA 100%);
+  color: #000;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 3px 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid #000;
+}
+
+.lang-selector-tape {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lang-tape-item {
+  background: var(--cor-papel-manilha);
+  color: #000;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 9px;
+  text-decoration: none;
+  border: 1px solid #333;
+  box-shadow: 2px 2px 0px #000;
+  transform: rotate(calc(var(--rot, 0) * 1deg));
+  transition: all 0.15s ease;
+}
+
+.lang-tape-item:hover, .lang-tape-item.active {
+  background: var(--cor-amarelo-manifesto);
+  color: #000;
+  transform: scale(1.08) translateY(-2px);
+  border-color: #ff0033;
+  box-shadow: 3px 3px 0px var(--cor-vermelho-choque);
+}
+
+/* --------------------------------------------------------------------------
+   CONTAINER PRINCIPAL
+   -------------------------------------------------------------------------- */
+.zine-container {
+  max-width: 1040px;
+  margin: 30px auto 100px auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   MANCHETE DE CAPA (HERO COM COLAGEM, PAPEL RASGADO & DUCT TAPE)
+   -------------------------------------------------------------------------- */
+.hero-wrapper {
+  position: relative;
+  margin-top: 35px;
+  margin-bottom: 50px;
+}
+
+/* Tape effect decor estilo fuxico — sobrepõe a borda superior do elemento */
+.duct-tape {
+  position: absolute;
+  top: -15px;
+  left: 32px;
+  transform: rotate(-2deg);
+  background: var(--cor-amarelo-manifesto);
+  color: #000;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  padding: 6px 28px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
+  z-index: 20;
+  user-select: none;
+  text-transform: uppercase;
+  clip-path: polygon(
+    0% 4px, 4px 0%, 8px 3px, 12px 0%, 100% 0%, 
+    97% 6px, 100% 12px, 98% 18px, 100% 100%, 
+    96% 96%, 92% 100%, 88% 97%, 0% 100%, 
+    3% 82%, 0% 64%, 2% 48%, 0% 32%, 3% 16%
+  );
+}
+
+.hero-zine-cover {
+  position: relative;
+  background-color: var(--cor-asfalto);
+  border: 3px solid #fff;
+  padding: 45px 36px;
+  margin-bottom: 0;
+  box-shadow: 8px 8px 0px #ff0033;
+}
+
+.zine-tag-insurgente {
+  display: inline-block;
+  background: var(--cor-vermelho-choque);
+  color: #fff;
+  font-family: 'Anton', sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  padding: 4px 12px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-title-glitch {
+  font-family: 'Syne', 'Anton', sans-serif;
+  font-size: clamp(48px, 9vw, 92px);
+  line-height: 0.95;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 18px 0;
+  letter-spacing: -1px;
+  text-shadow: 4px 4px 0px #ff007f, -3px -3px 0px #00f0ff;
+}
+
+.hero-subtitle-manifesto {
+  font-size: clamp(17px, 2.5vw, 22px);
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--cor-amarelo-manifesto);
+  margin-bottom: 24px;
+  border-left: 4px solid var(--cor-azul-trans);
+  padding-left: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   SEÇÕES EM PAPEL RASGADO & JORNAL
+   -------------------------------------------------------------------------- */
+.paper-section {
+  position: relative;
+  background-color: #121217;
+  border: 2px solid #282835;
+  padding: 38px 32px;
+  margin-bottom: 50px;
+  box-shadow: var(--sombra-bloco);
+}
+
+.paper-section.torn-paper {
+  background-color: var(--cor-papel-jornal);
+  color: var(--cor-tinta-preta);
+  border: 3px solid #000;
+  box-shadow: 8px 8px 0px #000;
+  clip-path: polygon(
+    0% 5px, 
+    2% 0%, 
+    15% 4px, 
+    30% 0px, 
+    55% 6px, 
+    75% 0px, 
+    95% 5px, 
+    100% 0%, 
+    100% calc(100% - 6px), 
+    98% 100%, 
+    82% calc(100% - 4px), 
+    60% 100%, 
+    40% calc(100% - 6px), 
+    20% 100%, 
+    0% calc(100% - 3px)
+  );
+}
+
+.paper-section.torn-paper p,
+.paper-section.torn-paper li {
+  color: #151515;
+}
+
+.paper-section.torn-paper h2 {
+  color: #b51010;
+  border-bottom: 3px solid #000;
+}
+
+.paper-section.torn-paper h3 {
+  color: #000;
+  background: var(--cor-amarelo-manifesto);
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid #000;
+}
+
+.paper-section h2 {
+  font-family: 'Syne', 'Anton', sans-serif;
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--cor-azul-trans);
+  margin-top: 0;
+  margin-bottom: 22px;
+  border-bottom: 2px dashed #444;
+  padding-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.paper-section h3 {
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--cor-rosa-trans);
+  margin: 30px 0 14px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --------------------------------------------------------------------------
+   FOTOGRAFIAS HISTÓRICAS (ESTILO CARTAZ COLADO NA RUA)
+   -------------------------------------------------------------------------- */
+.photo-street-frame {
+  position: relative;
+  margin: 36px 0;
+  background: #000;
+  padding: 14px;
+  border: 3px solid #fff;
+  box-shadow: 8px 8px 0px #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Fita durex nos cantos */
+.photo-street-frame::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  width: 90px;
+  height: 26px;
+  background: var(--cor-fita-durex);
+  border: 1px dashed rgba(0,0,0,0.3);
+  transform: rotate(-4deg);
+  z-index: 10;
+}
+
+.photo-street-frame::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 25px;
+  width: 80px;
+  height: 24px;
+  background: var(--cor-fita-durex);
+  border: 1px dashed rgba(0,0,0,0.3);
+  transform: rotate(3deg);
+  z-index: 10;
+}
+
+.photo-street-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 580px;
+  display: block;
+  border: 1px solid #333;
+  filter: contrast(1.15) brightness(0.95);
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
+}
+
+.photo-street-caption {
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: #0d0d12;
+  border-left: 4px solid var(--cor-vermelho-choque);
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.photo-street-caption strong {
+  color: var(--cor-amarelo-manifesto);
+}
+
+.photo-street-caption a {
+  color: var(--cor-azul-trans);
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   STENCILS, CARIMBOS & TARJAS DE CHOQUE
+   -------------------------------------------------------------------------- */
+.stamp-box {
+  display: inline-block;
+  border: 3px solid var(--cor-vermelho-choque);
+  color: var(--cor-vermelho-choque);
+  font-family: 'Anton', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+  margin: 12px 0;
+  background: rgba(255, 0, 51, 0.08);
+}
+
+.tarja-choque-preta {
+  background: #000;
+  color: #f5f5f7 !important;
+  padding: 16px 22px;
+  border-left: 6px solid var(--cor-rosa-trans);
+  margin: 22px 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.tarja-choque-preta p,
+.tarja-choque-preta li,
+.paper-section .tarja-choque-preta p,
+.paper-section .tarja-choque-preta li,
+.paper-section.torn-paper .tarja-choque-preta p,
+.paper-section.torn-paper .tarja-choque-preta li {
+  color: #f5f5f7 !important;
+}
+
+.tarja-choque-preta strong,
+.paper-section .tarja-choque-preta strong,
+.paper-section.torn-paper .tarja-choque-preta strong {
+  color: var(--cor-amarelo-manifesto) !important;
+}
+
+.tarja-choque-preta ol,
+.tarja-choque-preta ul,
+.paper-section.torn-paper .tarja-choque-preta ol,
+.paper-section.torn-paper .tarja-choque-preta ul {
+  color: #f5f5f7 !important;
+  padding-left: 24px;
+  margin: 10px 0;
+}
+
+/* --------------------------------------------------------------------------
+   LISTA DE REFERÊNCIAS BIBLIOGRÁFICAS
+   -------------------------------------------------------------------------- */
+.references-list {
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #aaa;
+}
+
+.references-list li {
+  margin-bottom: 12px;
+}
+
+.references-list strong {
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   RODAPÉ CANÔNICO EM 2 LINHAS (PERFIL LUMEN // NORMA GOST)
+   -------------------------------------------------------------------------- */
+.lumen-footer-canonical {
+  margin-top: 80px;
+  background: #000;
+  border-top: 4px solid var(--cor-rosa-trans);
+  border-bottom: 4px solid var(--cor-azul-trans);
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 -8px 0px #ff0033;
+}
+
+.footer-line-1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.footer-line-1 a {
+  color: var(--cor-amarelo-manifesto);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  font-weight: 900;
+}
+
+.footer-line-1 a:hover {
+  color: var(--cor-rosa-trans);
+}
+
+.footer-line-2 {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: #888899;
+  line-height: 1.8;
+}
+
+.footer-line-2 a {
+  color: var(--cor-azul-trans);
+  text-decoration: none;
+}
+
+.footer-line-2 a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   SUPORTE A LÍNGUAS RIGHT-TO-LEFT (ÁRABE - RTL)
+   -------------------------------------------------------------------------- */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Tahoma', 'Arial', sans-serif;
+}
+
+[dir="rtl"] .hero-subtitle-manifesto {
+  border-left: none;
+  border-right: 4px solid var(--cor-azul-trans);
+  padding-left: 0;
+  padding-right: 18px;
+}
+
+[dir="rtl"] .photo-street-caption {
+  border-left: none;
+  border-right: 4px solid var(--cor-vermelho-choque);
+}
+
+[dir="rtl"] .tarja-choque-preta {
+  border-left: none;
+  border-right: 6px solid var(--cor-rosa-trans);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVIDADE MOBILE
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero-zine-cover {
+    padding: 30px 18px;
+  }
+  .paper-section {
+    padding: 24px 18px;
+  }
+  .top-tape-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lang-selector-tape {
+    justify-content: center;
+  }
+  .footer-line-1 {
+    font-size: 16px;
+  }
+  .duct-tape {
+    font-size: 9.5px;
+    padding: 5px 18px;
+    left: 12px;
+    top: -12px;
+    max-width: calc(100% - 24px);
+    word-break: break-word;
+  }
+}
